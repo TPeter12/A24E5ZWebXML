@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<konferencia>
+    <cím>Digitális Jövő Konferencia 2025</cím>
+    <hallgatók>
+        <hallgató>
+            <név>Kovács Péter</név>
+            <lakcím>1024 Budapest, Margit körút 10.</lakcím>
+            <név>Nagy Anna</név>
+            <lakcím>6720 Szeged, Tisza Lajos körút 5.</lakcím>
+        </hallgató>
+    </hallgatók>
+    <helyszín>Budapest Kongresszusi Központ</helyszín>
+    <előadó>
+        <név>Dr. Szabó Márta</név>
+        <adószám>12345678-1-12</adószám>
+        <lakcím>1111 Budapest, Egyetem tér 1.</lakcím>
+    </előadó>
+    <dátum>2025-10-15</dátum>
+</konferencia>
