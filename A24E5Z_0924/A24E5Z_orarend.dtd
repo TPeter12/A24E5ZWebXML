@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ITF-8"?>
+
+<!ELEMENT ora (targy+, idopont+, helyszin+, oktato+, szak+)>
+<!ATTLIST ora id ID #REQUIRED>
+<!ATTLIST ora tipus (eloadas | gyakorlat) #REQUIRED>
+
+<!ELEMENT targy EMPTY>
+<!ATTLIST targy CDATA #IMPLEMENT>
+
+
+<!ELEMENT idpont (nap+, tol+, ig+)>
+
+<!ELEMENT nap EMPTY>
+<!ATTLIST nap CDATA #IMPLEMENT>
+
+<!ELEMENT tol EMPTY>
+<!ATTLIST tol CDATA #IMPLEMENT>
+
+<!ELEMENT ig EMPTY>
+<!ATTLIST ig CDATA #IMPLEMENT>
+
+
+<!ELEMENT helyszin EMPTY>
+<!ATTLIST helyszin CDATA #IMPLEMENT>
+
+<!ELEMENT oktato EMPTY>
+<!ATTLIST oktato CDATA #IMPLEMENT>
+
+<!ELEMENT szak EMPTY>
+<!ATTLIST szak CDATA #IMPLEMENT>
