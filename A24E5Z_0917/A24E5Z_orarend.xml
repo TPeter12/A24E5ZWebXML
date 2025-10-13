@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="ITF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <A24E5Z_orarend>
-    <ora id="1", tipus="eloadas">
+    <ora id="1" tipus="eloadas">
         <targy>Web Technologiak 1</targy>
         <idopont>
             <nap>hetfo</nap>
@@ -12,7 +12,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="2", tipus="eloadas">
+    <ora id="2" tipus="eloadas">
         <targy>Muszaki szaknyelv 1</targy>
         <idopont>
             <nap>Hetfo</nap>
@@ -26,7 +26,7 @@
 
 
 
-    <ora id="3", tipus="eloadas">
+    <ora id="3" tipus="eloadas">
         <targy>Mesterseges Intelligencia alapjai</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -38,7 +38,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="4", tipus="gyakorlat">
+    <ora id="4" tipus="gyakorlat">
         <targy>Mesterseges Intelligencia alapjai</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -50,7 +50,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="5", tipus="eloadas">
+    <ora id="5" tipus="eloadas">
         <targy>Algoritmusok es vizsgalatuk</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -62,7 +62,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="6", tipus="gyakorlat">
+    <ora id="6" tipus="gyakorlat">
         <targy>Algoritmusok es vizsgalatuk</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -76,7 +76,7 @@
 
 
 
-    <ora id="7", tipus="eloadas">
+    <ora id="7" tipus="eloadas">
         <targy>Webes adatkezelo kornyezetek</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -88,7 +88,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="8", tipus="gyakorlat">
+    <ora id="8" tipus="gyakorlat">
         <targy>Webes adatkezelo kornyezetek</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -100,7 +100,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="9", tipus="gyakorlat">
+    <ora id="9" tipus="gyakorlat">
         <targy>Web Technologiak</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -112,7 +112,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="10", tipus="eloadas">
+    <ora id="10" tipus="eloadas">
         <targy>Vallalati informacios rendszerek</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -124,7 +124,7 @@
         <szak>Programtervezo informatikus</szak>
     </ora>
 
-    <ora id="11", tipus="gyakorlat">
+    <ora id="11" tipus="gyakorlat">
         <targy>Vallalati informacios rendszerek</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -138,3 +138,4 @@
 
 
 </A24E5Z_orarend>
+
