@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<A24E5Z>
+    <!-- Éttermek -->
+    <etterem ekod="ET001">
+        <nev>La Bella Vita</nev>
+        <cim>
+            <varos>Budapest</varos>
+            <utca>Andrássy út</utca>
+            <hazszam>22</hazszam>
+        </cim>
+        <cegjegyzek>HU12345678</cegjegyzek>
+    </etterem>
+
+    <etterem ekod="ET002">
+        <nev>Golden Spoon</nev>
+        <cim>
+            <varos>Szeged</varos>
+            <utca>Kossuth Lajos utca</utca>
+            <hazszam>45</hazszam>
+        </cim>
+        <cegjegyzek>HU98765432</cegjegyzek>
+    </etterem>
+
+    <!-- Vendégek -->
+    <vendeg vid="V001">
+        <nev>Kiss Péter</nev>
+        <cim>
+            <varos>Debrecen</varos>
+            <utca>Fő utca</utca>
+            <hazszam>12</hazszam>
+        </cim>
+        <telefonszam>+36201234567</telefonszam>
+    </vendeg>
+
+    <vendeg vid="V002">
+        <nev>Nagy Anna</nev>
+        <cim>
+            <varos>Pécs</varos>
+            <utca>Jókai tér</utca>
+            <hazszam>8</hazszam>
+        </cim>
+        <telefonszam>+36205554444</telefonszam>
+    </vendeg>
+
+    <!-- Főszakácsok -->
+    <foszakacs fsid="FS001">
+        <nev>Molnár Gábor</nev>
+        <vegzettseg>Mester szakács</vegzettseg>
+        <etterem_ref>ET001</etterem_ref>
+    </foszakacs>
+
+    <foszakacs fsid="FS002">
+        <nev>Varga Zoltán</nev>
+        <vegzettseg>Mester séf</vegzettseg>
+        <etterem_ref>ET002</etterem_ref>
+    </foszakacs>
+
+    <!-- Szakácsok -->
+    <szakacs sid="S001">
+        <nev>Tóth László</nev>
+        <vegzettseg>Szakács</vegzettseg>
+        <foszakacs_ref>FS001</foszakacs_ref>
+        <etterem_ref>ET001</etterem_ref>
+    </szakacs>
+
+    <szakacs sid="S002">
+        <nev>Horváth Dóra</nev>
+        <vegzettseg>Szakács</vegzettseg>
+        <foszakacs_ref>FS002</foszakacs_ref>
+        <etterem_ref>ET002</etterem_ref>
+    </szakacs>
+
+    <!-- Gyakornokok -->
+    <gyakornok gid="G001">
+        <nev>Szabó Márk</nev>
+        <iskola>Vendéglátóipari Szakiskola</iskola>
+        <szakacs_ref>S001</szakacs_ref>
+        <etterem_ref>ET001</etterem_ref>
+    </gyakornok>
+
+    <gyakornok gid="G002">
+        <nev>Kovács Eszter</nev>
+        <iskola>Kulináris Akadémia</iskola>
+        <szakacs_ref>S002</szakacs_ref>
+        <etterem_ref>ET002</etterem_ref>
+    </gyakornok>
+
+    <!-- Rendelések -->
+    <rendeles rid="R001">
+        <datum>2025-10-15</datum>
+        <ido>19:00</ido>
+        <osszeg>15600</osszeg>
+        <vendeg_ref>V001</vendeg_ref>
+        <etterem_ref>ET001</etterem_ref>
+        <etelek>
+            <etel>
+                <nev>Margherita Pizza</nev>
+                <ar>3200</ar>
+                <mennyiseg>2</mennyiseg>
+            </etel>
+            <etel>
+                <nev>Spaghetti Carbonara</nev>
+                <ar>4200</ar>
+                <mennyiseg>1</mennyiseg>
+            </etel>
+        </etelek>
+    </rendeles>
+
+    <rendeles rid="R002">
+        <datum>2025-10-16</datum>
+        <ido>20:30</ido>
+        <osszeg>9800</osszeg>
+        <vendeg_ref>V002</vendeg_ref>
+        <etterem_ref>ET002</etterem_ref>
+        <etelek>
+            <etel>
+                <nev>Gulyásleves</nev>
+                <ar>2500</ar>
+                <mennyiseg>2</mennyiseg>
+            </etel>
+            <etel>
+                <nev>Túrós csusza</nev>
+                <ar>2400</ar>
+                <mennyiseg>2</mennyiseg>
+            </etel>
+        </etelek>
+    </rendeles>
+</A24E5Z>
