@@ -6,7 +6,7 @@
         <vezeteknev>Kiss</vezeteknev>
         <foglalkozas>Web Developer</foglalkozas>
     </hallgato>
-    <hallgato id="01">
+    <hallgato id="02">
         <keresztnev>Piroska</keresztnev>
         <vezeteknev>Vigh</vezeteknev>
         <foglalkozas>Java Programozo</foglalkozas>
