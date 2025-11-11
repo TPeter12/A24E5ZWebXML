@@ -17,7 +17,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-public class DomWrite {
+public class DomWriteA24E5Z {
 
     public static void main(String[] args) throws ParserConfigurationException,
     TransformerException {
@@ -30,9 +30,9 @@ public class DomWrite {
         Element root = doc.createElementNS("doma24e5z1029", "hallgatok");
         doc.appendChild(root);
 
-        root.appendChild(creatUser(doc, "1", "Peter", "Nagy", "Web Developer"));
-        root.appendChild(creatUser(doc, "2", "Piroska", "Vigh", "Java programozo"));
-        root.appendChild(creatUser(doc, "3", "Ferenc", "Kiss", "Associate professor"));
+        root.appendChild(createUser(doc, "1", "Peter", "Nagy", "Web Developer"));
+        root.appendChild(createUser(doc, "2", "Piroska", "Vigh", "Java programozo"));
+        root.appendChild(createUser(doc, "3", "Ferenc", "Kiss", "Associate professor"));
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transf = transformerFactory.newTransformer();

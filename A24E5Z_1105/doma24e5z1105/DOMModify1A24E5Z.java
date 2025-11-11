@@ -1,8 +1,9 @@
-package doma24e5z1029;
+package doma24e5z1105;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -13,7 +14,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DomModify1A24E5Z {
+public class DOMModify1A24E5Z {
 
     public static void main(String[] args) {
 
@@ -33,10 +34,21 @@ public class DomModify1A24E5Z {
                 if (oraNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element oraElement = (Element) oraNode;
 
+                    NodeList oraadoList = oraElement.getElementsByTagName("óraadó");
+                    if (oraadoList.getLength() == 0) {
+                        Element oraado = doc.createElement("óraadó");
 
-                    if("tipus".equals(oraElement.getNodeName())) {
-                    if("gyakorlat".equals(oraElement.getTextContent())) {
-                        oraElement.setTextContent("eloadas");
+                        Node oktatoNode = oraElement.getElementsByTagName("oktato").item(0);
+                        String oktatoNev = oktatoNode != null ? oktatoNode.getTextContent() : "Nincs oktato";
+
+                        oraado.setTextContent(oktatoNev);
+                        oraElement.appendChild(oraado);
+                    }
+
+                    NamedNodeMap attr = oraElement.getAttributes();
+                    Node tipusNode = attr.getNamedItem("tipus");
+                    if (tipusNode != null && "gyakorlat".equals(tipusNode.getTextContent())) {
+                        tipusNode.setTextContent("eloadas");
                     }
                 }
             }
@@ -46,13 +58,12 @@ public class DomModify1A24E5Z {
 
             DOMSource source = new DOMSource(doc);
 
-        System.out.println("---Módosított fájl---");
-        StreamResult consoleResult = new StreamResult(System.out);
-        transformer.transform(source, consoleResult);
+            System.out.println("---Módosított fájl---");
+            StreamResult consoleResult = new StreamResult(System.out);
+            transformer.transform(source, consoleResult);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-}
 }

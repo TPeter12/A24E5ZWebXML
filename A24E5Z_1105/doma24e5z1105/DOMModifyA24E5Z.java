@@ -1,4 +1,4 @@
-package doma24e5z1029;
+package doma24e5z1105;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
@@ -14,7 +14,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 
-public class DomModifyA24E5Z {
+public class DOMModifyA24E5Z {
 
     public static void main(String[] args) {
 
