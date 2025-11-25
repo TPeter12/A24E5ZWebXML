@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<A24E5Z_nyilvantartas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="A24E5Z_XSD.xsd">
+
+<Tulajdonos okod="O001">
+    <Nev>Kovács János</Nev>
+    <Telefonszam>+36-30-123-4567</Telefonszam>
+    <Telefonszam>+36-30-123-4567</Telefonszam>
+    <Cim>
+        <Varos>Budapest</Varos>
+        <Utca>Fő utca</Utca>
+        <Hazszam>12</Hazszam>
+    </Cim>
+</Tulajdonos>
+
+
+<Gepjarmu gkod="G001" alvazszam="ALV123456789" rendszam="ABC-123" O_G="O001">
+    <Tipus>Személyautó</Tipus>
+    <GyartasiEv>2015</GyartasiEv>
+    <Marka>Opel</Marka>
+    <Km_ora>120000</Km_ora>
+</Gepjarmu>
+
+<Gepjarmu gkod="G002" alvazszam="ALV987654321" rendszam="XYZ-987" O_G="O001">
+    <Tipus>Személyautó</Tipus>
+    <GyartasiEv>2018</GyartasiEv>
+    <Marka>Ford</Marka>
+    <Km_ora>60000</Km_ora>
+</Gepjarmu>
+
+<Gepjarmu gkod="G003" alvazszam="ALV112233445" rendszam="LMN-456" O_G="O001">
+    <Tipus>Teherautó</Tipus>
+    <GyartasiEv>2020</GyartasiEv>
+    <Marka>Mercedes</Marka>
+    <Km_ora>40000</Km_ora>
+</Gepjarmu>
+
+
+<Alkatresz akod="A001" A_X="X001">
+    <Nev>Olajszűrő</Nev>
+    <Tipus>Motor</Tipus>
+    <Cikkszam>OS123</Cikkszam>
+    <Darab>1</Darab>
+    <Gyarto>Bosch</Gyarto>
+    <Szarmazas>Németország</Szarmazas>
+    <Szolgaltatas>Csere</Szolgaltatas>
+</Alkatresz>
+
+<Alkatresz akod="A002" A_X="X002">
+    <Nev>Fékbetét</Nev>
+    <Tipus>Fék</Tipus>
+    <Cikkszam>FB456</Cikkszam>
+    <Darab>4</Darab>
+    <Gyarto>TRW</Gyarto>
+    <Szarmazas>Franciaország</Szarmazas>
+    <Szolgaltatas>Csere</Szolgaltatas>
+</Alkatresz>
+
+<Alkatresz akod="A003" A_X="X003">
+    <Nev>Légszűrő</Nev>
+    <Tipus>Motor</Tipus>
+    <Cikkszam>LS789</Cikkszam>
+    <Darab>1</Darab>
+    <Gyarto>Mann</Gyarto>
+    <Szarmazas>Németország</Szarmazas>
+    <Szolgaltatas>Csere</Szolgaltatas>
+</Alkatresz>
+
+<Tartalmaz xkod="X001" X_G="G001">
+    <Ar>6000</Ar>
+    <Jegyzokonyv>Olajszűrő csere</Jegyzokonyv>
+</Tartalmaz>
+
+<Tartalmaz xkod="X002" X_G="G002">
+    <Ar>7400</Ar>
+    <Jegyzokonyv>Fékbetét csere</Jegyzokonyv>
+</Tartalmaz>
+
+<Tartalmaz xkod="X003" X_G="G003">
+    <Ar>4000</Ar>
+    <Jegyzokonyv>Légszűrő csere</Jegyzokonyv>
+</Tartalmaz>
+
+
+<Uzemanyag ukod="U001"  U_G="G001">
+    <Tipus>Benzin</Tipus>
+    <Ar>580</Ar>
+    <Gyarto>MOL</Gyarto>
+</Uzemanyag>
+
+<Uzemanyag ukod="U002" U_G="G002">
+    <Tipus>Dízel</Tipus>
+    <Ar>600</Ar>
+    <Gyarto>MOL</Gyarto>
+</Uzemanyag>
+
+<Uzemanyag ukod="U003"  U_G="G003">
+    <Tipus>Benzin</Tipus>
+    <Ar>580</Ar>
+    <Gyarto>MOL</Gyarto>
+</Uzemanyag>
+
+<Tankolas tkod="T001" T_G="G001">
+      <Datum>2025-11-20</Datum>
+      <Liter>50</Liter>
+      <Osszeg>29000</Osszeg>
+</Tankolas>
+
+<Tankolas tkod="T002" T_G="G002">
+      <Datum>2025-11-22</Datum>
+      <Liter>40</Liter>
+      <Osszeg>23200</Osszeg>
+</Tankolas>
+
+</A24E5Z_nyilvantartas>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Gyökérelem -->
+  <xs:element name="A24E5Z_nyilvantartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Tulajdonos" type="TulajdonosType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Gepjarmu" type="GepjarmuType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Alkatresz" type="AlkatreszType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Tartalmaz" type="TartalmazType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Uzemanyag" type="UzemanyagType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Tankolas" type="TankolasType" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+
+        <!-- Kulcsok-->
+
+        <xs:key name="Tulajdonos_kulcs">
+            <xs:selector xpath="Tulajdonos"/>
+            <xs:field xpath="@okod"/>
+        </xs:key>
+
+        <xs:key name="Gepjarmu_kulcs">
+            <xs:selector xpath="Gepjarmu"/>
+            <xs:field xpath="@gkod"/>
+        </xs:key>
+
+        <xs:key name="Alkatresz_kulcs">
+            <xs:selector xpath="Alkatresz"/>
+            <xs:field xpath="@akod"/>
+        </xs:key>
+
+        <xs:key name="Uzemanyag_kulcs">
+            <xs:selector xpath="Uzemanyag"/>
+            <xs:field xpath="@ukod"/>
+        </xs:key>
+        
+        <xs:key name="Tartalmaz_kulcs">
+            <xs:selector xpath="Tartalmaz"/>
+            <xs:field xpath="@xkod"/>
+        </xs:key>
+
+        <!-- Idegen kulcsok-->
+
+        <xs:keyref name="Tulajdonos_FK" refer="Gepjarmu_kulcs">
+            <xs:selector xpath="Tulajdonos"/>
+            <xs:field xpath="@O_G"/>
+        </xs:keyref>
+
+        <xs:keyref name="Alkatresz_FK" refer="Tartalmaz_kulcs">
+            <xs:selector xpath="Alkatresz"/>
+            <xs:field xpath="@A_X"/>
+        </xs:keyref>
+
+        <xs:keyref name="Uzemanyag_FK" refer="Gepjarmu_kulcs">
+            <xs:selector xpath="Uzemanyag"/>
+            <xs:field xpath="@U_G"/>
+        </xs:keyref>
+
+        <xs:keyref name="Tankolas_FK" refer="Gepjarmu_kulcs">
+            <xs:selector xpath="Tankolas"/>
+            <xs:field xpath="@T_G"/>
+        </xs:keyref>
+
+        <xs:keyref name="Tartalmaz_FK" refer="Gepjarmu_kulcs">
+            <xs:selector xpath="Tartalmaz"/>
+            <xs:field xpath="@X_G"/>
+        </xs:keyref>
+
+        <!-- Unique kulcsok-->
+
+    <xs:unique name="Tankolas_kulcs">
+            <xs:selector xpath="Tankolas"/>
+            <xs:field xpath="@tkod"/>
+        </xs:unique>
+    </xs:element>
+
+  <!-- Tulajdonos -->
+    <xs:complexType name="TulajdonosType">
+      <xs:sequence>
+        <xs:element name="Nev" type="xs:string"/>
+        <xs:element name="Telefonszam" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Cim" type="CimType"/>
+      </xs:sequence>
+      <xs:attribute name="okod" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="CimType">
+        <xs:sequence>
+            <xs:element name="Varos" type="xs:string"></xs:element>
+            <xs:element name="Utca" type="xs:string"></xs:element>
+            <xs:element name="Hazszam" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+  <!-- Gépkocsik -->
+          <xs:complexType name="GepjarmuType">
+            <xs:sequence>
+              <xs:element name="Tipus" type="xs:string"/>
+              <xs:element name="GyartasiEv" type="xs:gYear"/>
+              <xs:element name="Marka" type="xs:string"/>
+              <xs:element name="Km_ora" type="xs:integer"/>
+            </xs:sequence>
+            <xs:attribute name="gkod" type="xs:ID" use="required"/>
+            <xs:attribute name="alvazszam" type="xs:string" use="optional"/>
+            <xs:attribute name="rendszam" type="xs:string" use="required"/>
+            <xs:attribute name="O_G" type="xs:IDREF" use="required"/>
+          </xs:complexType>
+
+  <!-- Alkatrészek -->
+          <xs:complexType name="AlkatreszType">
+            <xs:sequence>
+              <xs:element name="Nev" type="xs:string"/>
+              <xs:element name="Tipus" type="xs:string"/>
+              <xs:element name="Cikkszam" type="xs:string"/>
+              <xs:element name="Darab" type="xs:integer"/>
+              <xs:element name="Gyarto" type="xs:string"/>
+              <xs:element name="Szarmazas" type="xs:string"/>
+              <xs:element name="Szolgaltatas" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="akod" type="xs:ID" use="required"/>
+            <xs:attribute name="A_X" type="xs:IDREF" use="required"/>
+          </xs:complexType>
+
+    <!-- Tartalmaz -->
+    <xs:complexType name="TartalmazType">
+      <xs:sequence>
+        <xs:element name="Ar" type="xs:integer"/>
+        <xs:element name="Jegyzokonyv" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="xkod" type="xs:ID" use="required"/>
+      <xs:attribute name="X_G" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+
+  <!-- Üzemanyag -->
+          <xs:complexType name="UzemanyagType">
+            <xs:sequence>
+              <xs:element name="Tipus" type="xs:string"/>
+        <xs:element name="Ar" type="xs:integer"/>
+        <xs:element name="Gyarto" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="ukod" type="xs:ID" use="required"/>
+      <xs:attribute name="U_G" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+  <!-- Tankolás -->
+    <xs:complexType name="TankolasType">
+      <xs:sequence>
+        <xs:element name="Datum" type="xs:date"/>
+        <xs:element name="Liter" type="xs:integer"/>
+        <xs:element name="Osszeg" type="xs:integer"/>
+      </xs:sequence>
+      <xs:attribute name="tkod" type="xs:ID" use="required"/>
+      <xs:attribute name="T_G" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
