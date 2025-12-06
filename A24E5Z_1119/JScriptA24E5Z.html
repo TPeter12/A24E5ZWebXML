@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>A24E5Z Órarend 2025</title>
+</head>
+<body>
+    <h1>A24E5Z Órarend 2025</h1>
+
+    <button onclick="betoltOrarend()">Órarend betöltése</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        async function betoltOrarend() {
+            const out = document.getElementById("output");
+            out.textContent = "";
+
+            try {
+                const resp = await fetch("A24E5Z_orarend.json");
+                if (!resp.ok) {
+                    throw new Error("HTTP hiba: " + resp.status);
+                }
+
+                const data = await resp.json();
+
+                const root = data.A24E5Z_orarend;
+                if (!root || !Array.isArray(root.ora)) {
+                    out.textContent = "Hibás JSON szerkezet (nincs A24E5Z_orarend.ora)!";
+                    return;
+                }
+
+                const lessons = root.ora;
+
+                lessons.forEach((lesson, idx) => {
+                    const time = lesson.idopont || {};
+
+                    out.textContent += "Óra " + (idx + 1) + "\n";
+                    out.textContent += "Tárgy: "   + lesson.targy + "\n";
+                    out.textContent += "Helyszín: " + lesson.helyszin + "\n";
+                    out.textContent += "Oktató: "   + lesson.oktato + "\n";
+                    out.textContent += "Szak: "     + lesson.szak + "\n";
+                    out.textContent += "Nap: "      + time.nap + "\n";
+                    out.textContent += "Tól: "      + time.tol + "\n";
+                    out.textContent += "Ig: "       + time.ig + "\n\n";
+                });
+
+            } catch (err) {
+                console.error(err);
+                out.textContent = "Hiba: " + err.message;
+            }
+        }
+    </script>
+</body>
+</html>
